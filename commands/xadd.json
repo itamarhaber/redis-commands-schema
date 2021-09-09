@@ -1,0 +1,151 @@
+{
+    "XADD": {
+        "summary": "Appends a new entry to a stream",
+        "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entires evicted.",
+        "since": "5.0.0",
+        "group": "stream",
+        "arity": -5,
+        "return_summary": "Bulk string reply, specifically: The command returns the ID of the added entry. The ID is the one auto-generated if * is passed as ID argument, otherwise the command just returns the same ID specified by the user during insertion. The command returns a Null reply when used with the NOMKSTREAM option and the key doesn't exist.",
+        "return_types": {
+            "2": ["<bulk-string>", "<null-bulk-string>"],
+            "3": ["<bulk-string>", "<null>"]
+        },
+         "command_flags": [
+            "write",
+            "use-memory",
+            "fast",
+            "random"
+        ],
+        "acl_categories": [
+            "stream"
+        ],
+        "key_specs": [
+            {
+                "start_search": {
+                    "index": {
+                        "pos": 1
+                    }
+                },
+                "find_keys": {
+                    "range": {
+                        "count": 1,
+                        "step": 1,
+                        "limit": 0
+                    }
+                },
+                "flags": [
+                    "write"
+                ]
+            }
+        ],
+        "arguments": [
+            {
+                "name": "key",
+                "type": "key",
+                "value": "key"
+            },
+            {
+                "name": "trimming",
+                "optional": true,
+                "type": "block",
+                "value": [
+                    {
+                        "name": "strategy",
+                        "optional": false,
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "name": "maxlen",
+                                "type": null,
+                                "token": "MAXLEN",
+                                "value": null
+                            },
+                            {
+                                "name": "minid",
+                                "since": "6.2.0",
+                                "type": null,
+                                "token": "MINID",
+                                "value": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "operator",
+                        "optional": true,
+                        "type": "oneof",
+                        "value": [
+                            {
+                                "name": "exact",
+                                "type": null,
+                                "token": "=",
+                                "value": null
+                            },
+                            {
+                                "name": "inexact",
+                                "type": null,
+                                "token": "~",
+                                "value": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "threshold",
+                        "type": "integer",
+                        "value": "threshold"
+                    },
+                    {
+                        "name": "limit",
+                        "optional": true,
+                        "since": "6.2.0",
+                        "type": "integer",
+                        "token": "LIMIT",
+                        "value": "limit"
+                    }
+                ]
+            },
+            {
+                "name": "nomakestream",
+                "optional": true,
+                "since": "6.2.0",
+                "type": null,
+                "token": "NOMKSTREAM",
+                "value": null
+            },
+            {
+                "name": "id",
+                "type": "oneof",
+                "value": [
+                    {
+                        "name": "auto",
+                        "type": null,
+                        "token": "*",
+                        "value": null
+                    },
+                    {
+                        "name": "specific",
+                        "type": null,
+                        "token": "ID",
+                        "value": null
+                    }
+                ]
+            },
+            {
+                "name": "fieldandvalues",
+                "type": "block",
+                "multiple": true,
+                "value": [
+                    {
+                        "name": "field",
+                        "type": "string",
+                        "value": "field"
+                    },
+                    {
+                        "name": "value",
+                        "type": "string",
+                        "value": "value"
+                    }
+                ]
+            }
+        ]
+    }
+}

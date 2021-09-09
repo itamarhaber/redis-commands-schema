@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/arguments.schema.json",
+  "title": "Redis command arguments",
+  "description": "A Redis command's arguments.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/argument"
+  },
+  "$defs": {
+    "argument": {
+      "type": "object",
+      "required": [
+        "name",
+        "type"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "type": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "string",
+                "integer",
+                "double",
+                "key",
+                "pattern",
+                "unix_time",
+                "oneof",
+                "block"
+              ]
+            }
+          ]
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/argument"
+              }
+            }
+          ]
+        },
+        "token": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "optional": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "multiple": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "since": {
+          "$ref": "version-number.schema.json"
+        },
+        "history": {
+          "$ref": "history.schema.json"
+        }
+      }
+    }
+  }
+}

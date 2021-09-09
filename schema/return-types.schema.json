@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/return-types.schema.json",
+  "title": "Redis command return types",
+  "description": "A Redis command's return types.",
+  "$comment": "Need to update with new RESP versions.",
+  "type": "object",
+  "minLength": 1,
+  "maxLength": 2,
+  "propertyNames": {
+    "pattern": "^[2-3]$"
+  },
+  "patternProperties": {
+    "^2$": {
+      "$ref": "return-type-resp2.schema.json"
+    },
+    "^3$": {
+      "$ref": "return-type-resp3.schema.json"
+    }
+  }
+}

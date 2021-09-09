@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/version-number.schema.json",
+  "title": "Redis semantic version",
+  "description": "A semantic Redis version.",
+  "type": "string",
+  "minLength": 1,
+  "pattern": "^([0-9]+|[0-9]+\\.[0-9]+|[0-9]+\\.[0-9]+\\.[0-9]+)$"
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/key-spec.schema.json",
+  "title": "Redis command key specification",
+  "description": "A Redis command's specification of key name in its arguments.",
+  "type": "object",
+  "required": [
+    "start_search",
+    "find_keys",
+    "flags"
+  ],
+  "properties": {
+    "start_search": {
+      "description": "TBD",
+      "$ref": "#/$defs/start_search_spec"
+    },
+    "find_keys": {
+      "description": "TBD",
+      "$ref": "#/$defs/find_keys_spec"
+    },
+    "flags": {
+      "description": "TBD",
+      "$ref": "#/$defs/flags_spec"
+    }
+  },
+  "$defs": {
+    "start_search_spec": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "index"
+          ],
+          "properties": {
+            "index": {
+              "type": "object",
+              "required": [
+                "pos"
+              ],
+              "properties": {
+                "pos": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["keyword"],
+          "properties": {
+            "keyword": {
+              "type": "object",
+              "required": ["keyword", "start_search"],
+              "properties": {
+                "keyword": {
+                  "type": "string"
+                },
+                "start_search": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "find_keys_spec": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["range"],
+          "properties": {
+            "range": {
+              "type": "object",
+              "required": [
+                "count",
+                "step",
+                "limit"
+              ],
+              "properties": {
+                "count": {
+                  "type": "integer"
+                },
+                "step": {
+                  "type": "integer"
+                },
+                "limit": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [ "keynum" ],
+          "properties": {
+            "keynum": {
+              "type": "object",
+              "required": ["index", "first","step"],
+              "properties": {
+                "index": {
+                  "type": "integer"
+                },
+                "first": {
+                  "type": "integer"
+                },
+                "step": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "flags_spec": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["read", "write"]
+      }    
+    }
+  }
+}

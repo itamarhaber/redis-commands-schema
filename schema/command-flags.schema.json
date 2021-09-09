@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/command-flags.schema.json",
+  "title": "Redis command flags",
+  "description": "A Redis command's flags.",
+  "$comment": "used-memory appears not reported from the server",
+  "type": "array",
+  "minLength": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "string",
+    "enum": [
+      "use-memory",
+      "write",
+      "readonly",
+      "denyoom",
+      "admin",
+      "pubsub",
+      "noscript",
+      "random",
+      "sort_for_script",
+      "loading",
+      "stale",
+      "skip_monitor",
+      "skip_slowlog",
+      "asking",
+      "fast",
+      "no_auth",
+      "may_replicate",
+      "movablekeys"
+    ]
+  }
+}

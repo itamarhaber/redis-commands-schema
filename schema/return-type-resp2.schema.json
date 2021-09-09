@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/return-type-resp2.schema.json",
+  "title": "Redis command RESP2 return type",
+  "description": "A Redis command's RESP2 return type.",
+  "$comment": "TBD: complete types",
+  "type": "array",
+  "minLength": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "string",
+    "enum": ["+OK", "<bulk-string>", "<null-bulk-string>"]
+  }
+}

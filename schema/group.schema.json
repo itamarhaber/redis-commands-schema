@@ -1,0 +1,58 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://localhost/command-group.schema.json",
+    "title": "Redis command group",
+    "description": "A group to which commands can belong to",
+    "$comment": "New server groups need to be added here.",
+    "type": "string",
+    "oneOf": [
+        {
+            "const": "generic"
+        },
+        {
+            "const": "string"
+        },
+        {
+            "const": "list"
+        },
+        {
+            "const": "set"
+        },
+        {
+            "const": "sorted_set"
+        },
+        {
+            "const": "hash"
+        },
+        {
+            "const": "pubsub"
+        },
+        {
+            "const": "transactions"
+        },
+        {
+            "const": "connection"
+        },
+        {
+            "const": "server"
+        },
+        {
+            "const": "scripting"
+        },
+        {
+            "const": "hyperloglog"
+        },
+        {
+            "const": "cluster"
+        },
+        {
+            "const": "geo"
+        },
+        {
+            "const": "stream"
+        },
+        {
+            "const": "bitmap"
+        }
+    ]
+}  

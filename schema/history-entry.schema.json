@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/history-entry.schema.json",
+  "title": "Redis command history entry",
+  "description": "A Redis command's historical log entry.",
+  "type": "array",
+  "minItems": 2,
+  "maxItems": 2,
+  "items": [
+    { "ref": "/version-number.schema.json"},
+    { "type": "string" }
+  ],
+  "additionalItems": false
+}

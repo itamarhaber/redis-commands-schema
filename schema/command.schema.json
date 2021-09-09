@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/command.schema.json",
+  "title": "Redis command",
+  "description": "A Redis API command object",
+  "type": "object",
+  "required": [
+    "summary",
+    "complexity",
+    "since",
+    "group",
+    "arity",
+    "return_summary",
+    "return_types"
+  ],
+  "properties": {
+    "summary": {
+      "description": "A short description of the command",
+      "type": "string",
+      "minLength": 6
+    },
+    "complexity": {
+      "description": "The time complexity of the command using Big-O notation",
+      "type": "string",
+      "minLength": 3
+    },
+    "since": {
+      "description": "The Redis version in which the command was introduced",
+      "$ref": "version-number.schema.json"
+    },
+    "group":{
+      "description": "The group to which the command belongs",
+      "$ref": "group.schema.json"
+    },
+    "arity": {
+      "description": "The number of arguments the command expects. Negative values mean at least that number of arguments.",
+      "type": "integer"
+    },
+    "return_summary:": {
+      "description": "A summary of the returned replies",
+      "type": "string"
+    },
+    "return_types": {
+      "description": "The types of replies returned by the command",
+      "$ref": "return-types.schema.json"
+    },
+    "history": {
+      "description": "A list of changes the command underwent",
+      "$ref": "history.schema.json"
+    },
+    "deprecated": {
+      "description": "The deprecation version and the alternative",
+      "$comment": "TBD"
+    },
+    "command_flags": {
+      "description": "The flags set for the command",
+      "$ref": "command-flags.schema.json"
+    },
+    "acl_categories": {
+      "description": "The ACL categories the command belongs to",
+      "$ref": "acl-categories.schema.json"
+    },
+    "key_specs": {
+      "description": "The key name(s) specifications for the command",
+      "$ref": "key-specs.schema.json"
+    },
+    "arguments": {
+      "description": "The arguments supported by the command",
+      "$ref": "arguments.schema.json"
+    }  
+  }
+}

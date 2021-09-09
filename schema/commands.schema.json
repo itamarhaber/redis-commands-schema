@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/commands.schema.json",
+  "title": "Redis client commands",
+  "description": "This is the Redis commands dictionary. This API is used by clients to operate the server.",
+  "type": "object",
+  "minProperties": 1,
+  "propertyNames": {
+    "pattern": "^.([A-Z]*|[A-Z]* [A-Z]+|[A-Z]*\\.[A-Z]+|[A-Z]*\\.[A-Z]+ [A-Z]+)$",
+    "$comment": "Match regular commands, subcommands and ditto for modules."
+  },
+  "patternProperties": {
+    "^.*$": {
+      "$ref": "command.schema.json"
+    }
+  }
+}

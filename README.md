@@ -24,3 +24,9 @@ This project contains the following directories:
    ```sh
    yajsv -s schema/commands.schema.json commands/*
    ```
+
+## Changes vis a vis the "specs"
+
+* Input must be valid JSON (i.e. not JS)
+* `history` is an array of tuples -> `["since-version","change-description"]`
+* Arguments can have an optional `history`

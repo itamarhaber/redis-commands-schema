@@ -1,14 +1,18 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "http://localhost/return-type-resp3.schema.json",
-    "title": "Redis command RESP3 return type",
-    "description": "A Redis command's RESP3 return type.",
-    "$comment": "TBD: complete types",
-    "type": "array",
-    "uniqueItems": true,
-    "minLength": 1,
-    "items": {
-      "type": "string",
-      "enum": ["+OK", "<bulk-string>", "<null>"]
-    }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/return-type-resp3.schema.json",
+  "title": "Redis command RESP3 return type",
+  "description": "A Redis command's RESP3 return type.",
+  "$comment": "TBD: complete types",
+  "type": "array",
+  "uniqueItems": true,
+  "minLength": 1,
+  "items": {
+    "type": "string",
+    "enum": [
+      "+OK",
+      "<bulk-string>",
+      "<null>"
+    ]
   }
+}

@@ -9,6 +9,10 @@
   "uniqueItems": true,
   "items": {
     "type": "string",
-    "enum": ["+OK", "<bulk-string>", "<null-bulk-string>"]
+    "enum": [
+      "+OK",
+      "<bulk-string>",
+      "<null-bulk-string>"
+    ]
   }
 }

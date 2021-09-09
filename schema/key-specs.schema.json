@@ -1,10 +1,10 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "http://localhost/key-specs.schema.json",
-    "title": "Redis command key names specifications",
-    "description": "A Redis command's specifications of its key names arguments.",
-    "type": "array",
-    "items": {
-      "$ref": "key-spec.schema.json"
-    }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://localhost/key-specs.schema.json",
+  "title": "Redis command key names specifications",
+  "description": "A Redis command's specifications of its key names arguments.",
+  "type": "array",
+  "items": {
+    "$ref": "key-spec.schema.json"
   }
+}

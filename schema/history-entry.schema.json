@@ -7,8 +7,12 @@
   "minItems": 2,
   "maxItems": 2,
   "items": [
-    { "ref": "/version-number.schema.json"},
-    { "type": "string" }
+    {
+      "ref": "/version-number.schema.json"
+    },
+    {
+      "type": "string"
+    }
   ],
   "additionalItems": false
 }

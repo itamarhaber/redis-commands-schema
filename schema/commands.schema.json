@@ -6,7 +6,7 @@
   "type": "object",
   "minProperties": 1,
   "propertyNames": {
-    "pattern": "^.([A-Z]*|[A-Z]* [A-Z]+|[A-Z]*\\.[A-Z]+|[A-Z]*\\.[A-Z]+ [A-Z]+)$",
+    "pattern": "^.([A-Z\\-_.]*|[A-Z\\-_.]* [A-Z\\-_.]+)$",
     "$comment": "Match regular commands, subcommands and ditto for modules."
   },
   "patternProperties": {

@@ -28,7 +28,7 @@
       "description": "The Redis version in which the command was introduced",
       "$ref": "version-number.schema.json"
     },
-    "group":{
+    "group": {
       "description": "The group to which the command belongs",
       "$ref": "group.schema.json"
     },
@@ -67,6 +67,6 @@
     "arguments": {
       "description": "The arguments supported by the command",
       "$ref": "arguments.schema.json"
-    }  
+    }
   }
 }

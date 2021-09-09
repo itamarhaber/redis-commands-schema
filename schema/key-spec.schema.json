@@ -49,11 +49,16 @@
         },
         {
           "type": "object",
-          "required": ["keyword"],
+          "required": [
+            "keyword"
+          ],
           "properties": {
             "keyword": {
               "type": "object",
-              "required": ["keyword", "start_search"],
+              "required": [
+                "keyword",
+                "start_search"
+              ],
               "properties": {
                 "keyword": {
                   "type": "string"
@@ -73,7 +78,9 @@
       "oneOf": [
         {
           "type": "object",
-          "required": ["range"],
+          "required": [
+            "range"
+          ],
           "properties": {
             "range": {
               "type": "object",
@@ -100,11 +107,17 @@
         },
         {
           "type": "object",
-          "required": [ "keynum" ],
+          "required": [
+            "keynum"
+          ],
           "properties": {
             "keynum": {
               "type": "object",
-              "required": ["index", "first","step"],
+              "required": [
+                "index",
+                "first",
+                "step"
+              ],
               "properties": {
                 "index": {
                   "type": "integer"
@@ -128,8 +141,11 @@
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "enum": ["read", "write"]
-      }    
+        "enum": [
+          "read",
+          "write"
+        ]
+      }
     }
   }
 }

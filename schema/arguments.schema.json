@@ -14,19 +14,13 @@
         "name",
         "type"
       ],
+      "additionalProperties": false,
       "properties": {
         "name": {
           "type": "string"
         },
         "description": {
-          "oneOf": [
-            {
-              "type": "null"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "type": "string"
         },
         "type": {
           "oneOf": [
@@ -65,34 +59,13 @@
           ]
         },
         "token": {
-          "oneOf": [
-            {
-              "type": "null"
-            },
-            {
-              "type": "string"
-            }
-          ]
+          "type": "string"
         },
         "optional": {
-          "oneOf": [
-            {
-              "type": "null"
-            },
-            {
-              "type": "boolean"
-            }
-          ]
+          "type": "boolean"
         },
         "multiple": {
-          "oneOf": [
-            {
-              "type": "null"
-            },
-            {
-              "type": "boolean"
-            }
-          ]
+          "type": "boolean"
         },
         "since": {
           "$ref": "version-number.schema.json"

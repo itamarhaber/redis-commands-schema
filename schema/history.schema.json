@@ -3,15 +3,8 @@
   "$id": "http://localhost/history.schema.json",
   "title": "Redis command history",
   "description": "A Redis command's historical log.",
-  "oneOf": [
-    {
-      "type": "null"
-    },
-    {
-      "type": "array",
-      "items": {
-        "$ref": "history-entry.schema.json"
-      }
-    }
-  ]
+  "type": "array",
+  "items": {
+    "$ref": "history-entry.schema.json"
+  }
 }

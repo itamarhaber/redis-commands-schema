@@ -27,6 +27,9 @@ This project contains the following directories:
 
 ## Changes vis a vis the "specs"
 
-* Input must be valid JSON (i.e. not JS)
 * `history` is an array of tuples -> `["since-version","change-description"]`
 * Arguments can have an optional `history`
+
+## TODOs
+
+* Extend command to describe its origin: core, 1st-party extension, 3rd-party module

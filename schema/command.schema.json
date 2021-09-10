@@ -13,6 +13,7 @@
     "return_summary",
     "return_types"
   ],
+  "additionalProperties": false,
   "properties": {
     "summary": {
       "description": "A short description of the command",
@@ -36,7 +37,7 @@
       "description": "The number of arguments the command expects. Negative values mean at least that number of arguments.",
       "type": "integer"
     },
-    "return_summary:": {
+    "return_summary": {
       "description": "A summary of the returned replies",
       "type": "string"
     },
